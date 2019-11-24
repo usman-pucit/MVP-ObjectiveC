@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eHr-ZO-f4e">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="fcG-0h-8ZO">
+            <objects>
+                <viewController storyboardIdentifier="VehiclesMapController" id="ujg-GG-edH" customClass="VehiclesMapController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rby-fK-TRW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JX3-9h-Uzf">
+                                <rect key="frame" x="0.0" y="140" width="375" height="638"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ujg-GG-edH" id="U0n-MX-AMD"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zh8-dL-Hgf" customClass="DGActivityIndicatorView">
+                                <rect key="frame" x="112.66666666666669" y="331" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Son-Uc-iPg"/>
+                                    <constraint firstAttribute="width" constant="150" id="k8f-JJ-QLk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zh8-dL-Hgf" firstAttribute="centerY" secondItem="Rby-fK-TRW" secondAttribute="centerY" id="FbT-qj-iFD"/>
+                            <constraint firstItem="zh8-dL-Hgf" firstAttribute="centerX" secondItem="Rby-fK-TRW" secondAttribute="centerX" id="YlM-8x-FN1"/>
+                            <constraint firstItem="Zil-Lx-M2R" firstAttribute="trailing" secondItem="JX3-9h-Uzf" secondAttribute="trailing" id="kWp-3s-fYq"/>
+                            <constraint firstItem="JX3-9h-Uzf" firstAttribute="leading" secondItem="Zil-Lx-M2R" secondAttribute="leading" id="pbG-KM-RYd"/>
+                            <constraint firstItem="Zil-Lx-M2R" firstAttribute="bottom" secondItem="JX3-9h-Uzf" secondAttribute="bottom" id="qJH-p5-8ew"/>
+                            <constraint firstItem="JX3-9h-Uzf" firstAttribute="top" secondItem="Zil-Lx-M2R" secondAttribute="top" id="qfn-2T-jqC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zil-Lx-M2R"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="DXZ-v4-5XY"/>
+                    <connections>
+                        <outlet property="mapView" destination="JX3-9h-Uzf" id="EHB-ql-kCG"/>
+                        <outlet property="spinner" destination="zh8-dL-Hgf" id="M5z-1C-Fgo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9SN-UA-J6x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DvP-Kn-CHn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eHr-ZO-f4e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ftK-0g-11l">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ujg-GG-edH" kind="relationship" relationship="rootViewController" id="Vlc-pm-2Bv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKa-P3-yze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+</document>
