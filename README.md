@@ -6,5 +6,5 @@
  * `Mapkit` - A person greeting app, shows name and birthdate.
 
 # Venders or Third party
-### AFNetworking --  Section 2
+### AFNetworking 
 ###  DGActivityIndicatorView -- Activity loader
